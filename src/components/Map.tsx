@@ -1,18 +1,19 @@
 import React from "react";
 import "../index.css";
 
-import Dungeon from "./Dungeon";
-import Bastion from "./Bastion";
+import Dungeon, { DungeonInfo } from "./Dungeon";
+import Bastion, { BastionInfo } from "./Bastion";
 
 type MapProps = {
   imageUrl: string;
+  onBlockClick: (info: DungeonInfo | BastionInfo) => void;
 };
 
-const Map: React.FC<MapProps> = ({ imageUrl }) => {
+const Map: React.FC<MapProps> = ({ imageUrl, onBlockClick }) => {
   const dungeonImageUrl = "./src/assets/game/image 13.png";
   const bastionImageUrl = "./src/assets/game/image 2.png";
 
-  const items = Array.from({ length: 10 }, (_, index) => index + 1);
+  const items = Array.from({ length: 5 }, (_, index) => index + 1);
 
   const mapStyles: React.CSSProperties = {
     backgroundImage: `url(${imageUrl})`,
@@ -29,11 +30,10 @@ const Map: React.FC<MapProps> = ({ imageUrl }) => {
   return (
     <div style={mapStyles}>
       {items.map(index => (
-        <Bastion key={index} imageUrl={bastionImageUrl} />
+        <Dungeon key={index} imageUrl={dungeonImageUrl} index={index} onClick={onBlockClick} />
       ))}
-
       {items.map(index => (
-        <Dungeon key={index} imageUrl={dungeonImageUrl} />
+        <Bastion key={index} imageUrl={bastionImageUrl} index={index} onClick={onBlockClick} />
       ))}
     </div>
   );
