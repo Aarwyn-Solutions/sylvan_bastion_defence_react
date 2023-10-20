@@ -1,10 +1,17 @@
 import React from "react";
 
-type BastionProps = {
-  imageUrl: string;
+export type BastionInfo = {
+  name: string;
+  description: string;
 };
 
-const Bastion: React.FC<BastionProps> = ({ imageUrl }) => {
+type BastionProps = {
+  imageUrl: string;
+  index: number;
+  onClick: (info: BastionInfo) => void;
+};
+
+const Bastion: React.FC<BastionProps> = ({ imageUrl, index, onClick }) => {
   const bastionStyles: React.CSSProperties = {
     width: "148px",
     height: "142px",
@@ -19,8 +26,17 @@ const Bastion: React.FC<BastionProps> = ({ imageUrl }) => {
     objectFit: "cover",
   };
 
+  const handleClick = () => {
+    const bastionInfo: BastionInfo = {
+      name: `Bastion ${index}`,
+      description: `Description block for ${index}`,
+    };
+
+    onClick(bastionInfo);
+  };
+
   return (
-    <div className="bastion-block" style={bastionStyles}>
+    <div className="bastion-block" style={bastionStyles} onClick={handleClick}>
       <img
         className="bastion-image-block"
         style={bastionImageStyles}
