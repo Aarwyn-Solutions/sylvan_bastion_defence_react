@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { DungeonInfo } from "./Dungeon";
+import { BastionInfo } from "./Bastion";
 
 type MenuProps = {
-  name: string;
-  description: string;
+  selectedBlock: BastionInfo | DungeonInfo | null;
 };
 
-const Menu: React.FC<MenuProps> = ({ name, description }) => {
+const Menu: React.FC<MenuProps> = ({ selectedBlock }) => {
   const [userInput, setUserInput] = useState("");
 
   const menuContainerStyle: React.CSSProperties = {
@@ -33,8 +34,14 @@ const Menu: React.FC<MenuProps> = ({ name, description }) => {
 
   return (
     <div style={menuContainerStyle}>
-      <h2>{name}</h2>
-      <p>{description}</p>
+      {selectedBlock ? (
+        <div>
+          <p>Name: {selectedBlock.name}</p>
+          <p>Description: {selectedBlock.description}</p>
+        </div>
+      ) : (
+        <p>Select a block to see details</p>
+      )}
 
       <div style={sideMenuStyle}>
         <h3>Additional Information</h3>
