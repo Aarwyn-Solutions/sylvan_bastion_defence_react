@@ -1,13 +1,16 @@
-import { useDojo } from "./DojoContext";
+import React from "react";
 import { useEffect } from "react";
-import { setComponentsFromGraphQLEntities } from "@dojoengine/utils";
 
-function App() {
+import Map from "./components/Map";
+
+const App: React.FC = () => {
+  const mapImageUrl = "./src/assets/game/map.jpg";
   return (
     <>
-      <h1>Hello world</h1>
+      <h1>Hello Map</h1>
+      <Map imageUrl={mapImageUrl} />
     </>
   );
-}
+};
 
 export default App;
