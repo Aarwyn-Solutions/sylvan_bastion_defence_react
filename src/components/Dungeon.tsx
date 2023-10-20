@@ -1,10 +1,17 @@
 import React from "react";
 
-type DungeonProps = {
-  imageUrl: string;
+export type DungeonInfo = {
+  name: string;
+  description: string;
 };
 
-const Dungeon: React.FC<DungeonProps> = ({ imageUrl }) => {
+type DungeonProps = {
+  imageUrl: string;
+  index: number;
+  onClick: (info: DungeonInfo) => void;
+};
+
+const Dungeon: React.FC<DungeonProps> = ({ imageUrl, index, onClick }) => {
   const dungeonStyles: React.CSSProperties = {
     width: "90px",
     height: "90px",
@@ -19,8 +26,17 @@ const Dungeon: React.FC<DungeonProps> = ({ imageUrl }) => {
     objectFit: "cover",
   };
 
+  const handleClick = () => {
+    const dungeonInfo: DungeonInfo = {
+      name: `Dungeon ${index}`,
+      description: `Description block for ${index}`,
+    };
+
+    onClick(dungeonInfo);
+  };
+
   return (
-    <div className="dungeon-block" style={dungeonStyles}>
+    <div className="dungeon-block" style={dungeonStyles} onClick={handleClick}>
       <img
         className="dungeon-image-block"
         style={dungeonImageStyles}
