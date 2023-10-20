@@ -5,7 +5,7 @@ type BastionProps = {
 };
 
 const Bastion: React.FC<BastionProps> = ({ imageUrl }) => {
-  const dungeonStyles: React.CSSProperties = {
+  const bastionStyles: React.CSSProperties = {
     width: "148px",
     height: "142px",
     borderRadius: "50%",
@@ -13,17 +13,17 @@ const Bastion: React.FC<BastionProps> = ({ imageUrl }) => {
     overflow: "hidden",
   };
 
-  const dungeonImageStyles: React.CSSProperties = {
+  const bastionImageStyles: React.CSSProperties = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
   };
 
   return (
-    <div className="bastion-block" style={dungeonStyles}>
+    <div className="bastion-block" style={bastionStyles}>
       <img
         className="bastion-image-block"
-        style={dungeonImageStyles}
+        style={bastionImageStyles}
         src={imageUrl}
         alt="Bastion image"
       />
