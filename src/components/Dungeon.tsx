@@ -35,8 +35,9 @@ const Dungeon: React.FC<DungeonProps> = ({ imageUrl, index, onClick }) => {
     onClick(dungeonInfo);
   };
 
+  const dungeonBlockId = `dungeon-block-${index}`;
   return (
-    <div className="dungeon-block" style={dungeonStyles} onClick={handleClick}>
+    <div className="dungeon-block" id={dungeonBlockId} style={dungeonStyles} onClick={handleClick}>
       <img
         className="dungeon-image-block"
         style={dungeonImageStyles}

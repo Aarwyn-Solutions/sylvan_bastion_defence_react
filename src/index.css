@@ -113,3 +113,99 @@ button:focus-visible {
 canvas {
   display: block;
 }
+
+#bastion-block-1 {
+  position: absolute;
+  left: 600px;
+  top: 900px;
+}
+
+#bastion-block-2 {
+  position: absolute;
+  left: 700px;
+  top: 400px;
+}
+
+#bastion-block-3 {
+  position: absolute;
+  left: 300px;
+  top: 800px;
+}
+
+#dungeon-block-1 {
+  position: absolute;
+  left: 1030px;
+  top: 460px;
+}
+
+#dungeon-block-2 {
+  position: absolute;
+  left: 100px;
+  top: 550px;
+}
+
+#dungeon-block-3 {
+  position: absolute;
+  left: 280px;
+  top: 660px;
+}
+
+#dungeon-block-4 {
+  position: absolute;
+  left: 280px;
+  top: 660px;
+}
+
+#dungeon-block-5 {
+  position: absolute;
+  left: 750px;
+  top: 1090px;
+}
+
+#dungeon-block-6 {
+  position: absolute;
+  left: 350px;
+  top: 1030px;
+}
+
+#dungeon-block-7 {
+  position: absolute;
+  left: 1200px;
+  top: 900px;
+}
+
+#dungeon-block-8 {
+  position: absolute;
+  left: 390px;
+  top: 20px;
+}
+
+#dungeon-block-9 {
+  position: absolute;
+  left: 670px;
+  top: 280px;
+}
+
+#dungeon-block-10 {
+  position: absolute;
+  left: 90px;
+  top: 1050px;
+}
+
+#dungeon-block-11 {
+  position: absolute;
+  left: 800px;
+  top: 600px;
+}
+
+#dungeon-block-12 {
+  position: absolute;
+  left: 250px;
+  top: 380px;
+}
+
+#dungeon-block-13 {
+  position: absolute;
+  left: 1000px;
+  top: 220px;
+}

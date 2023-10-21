@@ -12,6 +12,7 @@ const App: React.FC = () => {
   const appStyles: React.CSSProperties = {
     display: "flex",
     flexWrap: "wrap",
+    width: "1900px",
   };
 
   const handleBlockClick = (info: BastionInfo | DungeonInfo) => {
@@ -20,7 +21,6 @@ const App: React.FC = () => {
 
   return (
     <>
-      <h1>Hello Map</h1>
       <div className="container" style={appStyles}>
         <Map imageUrl={mapImageUrl} onBlockClick={handleBlockClick} />
         <Menu selectedBlock={selectedBlock} />

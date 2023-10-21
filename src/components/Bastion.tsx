@@ -35,8 +35,9 @@ const Bastion: React.FC<BastionProps> = ({ imageUrl, index, onClick }) => {
     onClick(bastionInfo);
   };
 
+  const bastionBlockId = `bastion-block-${index}`;
   return (
-    <div className="bastion-block" style={bastionStyles} onClick={handleClick}>
+    <div className="bastion-block" id={bastionBlockId} style={bastionStyles} onClick={handleClick}>
       <img
         className="bastion-image-block"
         style={bastionImageStyles}
