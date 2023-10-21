@@ -10,16 +10,14 @@ type MapProps = {
 };
 
 const Map: React.FC<MapProps> = ({ imageUrl, onBlockClick }) => {
-  const dungeonImageUrl = "./src/assets/game/image 13.png";
-  const bastionImageUrl = "./src/assets/game/image 2.png";
-
-  const items = Array.from({ length: 5 }, (_, index) => index + 1);
+  const dungeons = Array.from({ length: 13 }, (_, index) => index + 1);
+  const bastions = Array.from({ length: 3 }, (_, index) => index + 1);
 
   const mapStyles: React.CSSProperties = {
     backgroundImage: `url(${imageUrl})`,
     backgroundSize: "cover",
     width: "100%",
-    height: "100vh",
+    height: "200vh",
     position: "relative",
     display: "grid",
     gridTemplateColumns: "repeat(5, 1fr)",
@@ -27,13 +25,49 @@ const Map: React.FC<MapProps> = ({ imageUrl, onBlockClick }) => {
     flex: "0 0 70%",
   };
 
+  /*{" "}
+      {dungeons.map(index => (
+        <Dungeon
+          key={index}
+          imageUrl={`./src/assets/game/structures/dungeon_${index}.png`}
+          index={index}
+          onClick={onBlockClick}
+        />
+      ))}
+      {bastions.map(index => (
+        <Bastion
+          key={index}
+          imageUrl={`./src/assets/game/structures/bastion_${index}.png`}
+          index={index}
+          onClick={onBlockClick}
+        />
+      ))}{" "}
+      */
+  /*
+  <Bastion
+    key={3}
+    imageUrl={`./src/assets/game/structures/bastion_3.png`}
+    index={3}
+    onClick={onBlockClick}
+  />;
+*/
   return (
     <div style={mapStyles}>
-      {items.map(index => (
-        <Dungeon key={index} imageUrl={dungeonImageUrl} index={index} onClick={onBlockClick} />
+      {dungeons.map(index => (
+        <Dungeon
+          key={index}
+          imageUrl={`./src/assets/game/structures/dungeon_${index}.png`}
+          index={index}
+          onClick={onBlockClick}
+        />
       ))}
-      {items.map(index => (
-        <Bastion key={index} imageUrl={bastionImageUrl} index={index} onClick={onBlockClick} />
+      {bastions.map(index => (
+        <Bastion
+          key={index}
+          imageUrl={`./src/assets/game/structures/bastion_${index}.png`}
+          index={index}
+          onClick={onBlockClick}
+        />
       ))}
     </div>
   );
