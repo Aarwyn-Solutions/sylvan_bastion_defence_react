@@ -3,6 +3,7 @@ import React from "react";
 export type BastionInfo = {
   name: string;
   description: string;
+  image: string | null;
 };
 
 type BastionProps = {
@@ -30,6 +31,7 @@ const Bastion: React.FC<BastionProps> = ({ imageUrl, index, onClick }) => {
     const bastionInfo: BastionInfo = {
       name: `Bastion ${index}`,
       description: `Description block for ${index}`,
+      image: null,
     };
 
     onClick(bastionInfo);

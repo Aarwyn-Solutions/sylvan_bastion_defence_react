@@ -1,17 +1,37 @@
 import React from "react";
 
+export type DungeonType = {
+  index: number;
+  name: string | null;
+  description: string | null;
+  image: string | null;
+};
+
 export type DungeonInfo = {
   name: string;
-  description: string;
+  description: string | null;
+  image: string | null;
 };
 
 type DungeonProps = {
   imageUrl: string;
   index: number;
   onClick: (info: DungeonInfo) => void;
+  isActive: boolean;
+  description: string | null;
+  imageBig: string | null;
+  name: string | null;
 };
 
-const Dungeon: React.FC<DungeonProps> = ({ imageUrl, index, onClick }) => {
+const Dungeon: React.FC<DungeonProps> = ({
+  imageUrl,
+  index,
+  onClick,
+  isActive,
+  description,
+  imageBig,
+  name,
+}) => {
   const dungeonStyles: React.CSSProperties = {
     width: "90px",
     height: "90px",
@@ -26,14 +46,21 @@ const Dungeon: React.FC<DungeonProps> = ({ imageUrl, index, onClick }) => {
     objectFit: "cover",
   };
 
-  const handleClick = () => {
+  let handleClick: (() => void) | null = () => {
     const dungeonInfo: DungeonInfo = {
-      name: `Dungeon ${index}`,
-      description: `Description block for ${index}`,
+      name: name,
+      description: description,
+      image: imageBig,
     };
 
     onClick(dungeonInfo);
   };
+
+  if (!isActive) {
+    dungeonStyles.filter = "grayscale(100%)";
+    dungeonStyles.border = "2px solid gray";
+    handleClick = null;
+  }
 
   const dungeonBlockId = `dungeon-block-${index}`;
   return (
