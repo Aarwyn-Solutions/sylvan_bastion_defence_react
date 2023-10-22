@@ -25,32 +25,6 @@ const Map: React.FC<MapProps> = ({ imageUrl, onBlockClick }) => {
     flex: "0 0 70%",
   };
 
-  /*{" "}
-      {dungeons.map(index => (
-        <Dungeon
-          key={index}
-          imageUrl={`./src/assets/game/structures/dungeon_${index}.png`}
-          index={index}
-          onClick={onBlockClick}
-        />
-      ))}
-      {bastions.map(index => (
-        <Bastion
-          key={index}
-          imageUrl={`./src/assets/game/structures/bastion_${index}.png`}
-          index={index}
-          onClick={onBlockClick}
-        />
-      ))}{" "}
-      */
-  /*
-  <Bastion
-    key={3}
-    imageUrl={`./src/assets/game/structures/bastion_3.png`}
-    index={3}
-    onClick={onBlockClick}
-  />;
-*/
   return (
     <div style={mapStyles}>
       {dungeons.map(index => (
