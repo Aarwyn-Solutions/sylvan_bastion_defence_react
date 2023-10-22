@@ -28,6 +28,12 @@ const Menu: React.FC<MenuProps> = ({ selectedBlock }) => {
     flex: "0 0 30%",
   };
 
+  const menuImageStyles: React.CSSProperties = {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setUserInput(e.target.value);
   };
@@ -37,6 +43,7 @@ const Menu: React.FC<MenuProps> = ({ selectedBlock }) => {
       {selectedBlock ? (
         <div>
           <p>Name: {selectedBlock.name}</p>
+          {selectedBlock.image ? <img src={selectedBlock.image} style={menuImageStyles} /> : <></>}
           <p>Description: {selectedBlock.description}</p>
         </div>
       ) : (
