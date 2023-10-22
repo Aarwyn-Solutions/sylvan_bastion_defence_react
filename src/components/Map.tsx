@@ -13,13 +13,21 @@ const Map: React.FC<MapProps> = ({ imageUrl, onBlockClick }) => {
   const mapStyles: React.CSSProperties = {
     backgroundImage: `url(${imageUrl})`,
     backgroundSize: "cover",
-    width: "100%",
-    height: "200vh",
+    // backgroundSize: "contain",
+    // width: "70%",
+    height: "120vh",
+    // height: window.innerHeight,
+    // height: window.innerHeight,
+    width: window.innerWidth,
+
+    // width: "900px",
+    // height: "900px",
+    // height: "100%",
     position: "relative",
     display: "grid",
     gridTemplateColumns: "repeat(5, 1fr)",
     gridGap: "10px",
-    flex: "0 0 70%",
+    flex: "0 0 65%",
   };
 
   const checkIndex = index => {

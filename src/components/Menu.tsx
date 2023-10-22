@@ -13,7 +13,8 @@ const Menu: React.FC<MenuProps> = ({ selectedBlock }) => {
     backgroundColor: "#1d0802",
     padding: "20px",
     borderRadius: "0 10px 10px 0",
-    width: "27%",
+    // width: "27%",
+    width: "32%",
   };
 
   const sideMenuStyle: React.CSSProperties = {

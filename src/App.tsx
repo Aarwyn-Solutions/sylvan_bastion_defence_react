@@ -12,7 +12,9 @@ const App: React.FC = () => {
   const appStyles: React.CSSProperties = {
     display: "flex",
     flexWrap: "wrap",
-    width: "1900px",
+    // width: "1900px",
+    width: window.innerWidth,
+    height: window.innerHeight,
   };
 
   const handleBlockClick = (info: BastionInfo | DungeonInfo) => {
